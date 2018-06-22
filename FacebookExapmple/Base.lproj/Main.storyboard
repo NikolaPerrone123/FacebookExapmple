@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,61 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pix-Je-M7N">
+                                <rect key="frame" x="94" y="525" width="187" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="JOT-0B-eyE"/>
+                                </constraints>
+                                <state key="normal" title="LogIn to Facebook"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dS3-dc-nVX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pb5-bn-p4V">
+                                <rect key="frame" x="94" y="582" width="187" height="30"/>
+                                <color key="backgroundColor" red="0.96232205630000001" green="0.95963305229999996" blue="0.96243208650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Share with Facebook"/>
+                                <connections>
+                                    <action selector="shareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RuE-X1-osP"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3l5-nE-63J">
+                                <rect key="frame" x="112" y="120" width="150" height="150"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="TKf-5t-eOP"/>
+                                    <constraint firstAttribute="width" constant="150" id="UQg-zC-MCS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.26084017753601074" green="0.4027484655380249" blue="0.69884943962097168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pix-Je-M7N" firstAttribute="top" secondItem="3l5-nE-63J" secondAttribute="bottom" constant="255" id="0I2-o8-dvl"/>
+                            <constraint firstItem="pb5-bn-p4V" firstAttribute="top" secondItem="Pix-Je-M7N" secondAttribute="bottom" constant="27" id="BuK-Pq-fIZ"/>
+                            <constraint firstItem="3l5-nE-63J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="DcS-gD-M8X"/>
+                            <constraint firstItem="pb5-bn-p4V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OJz-p6-DKK"/>
+                            <constraint firstItem="3l5-nE-63J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XPb-hG-Opi"/>
+                            <constraint firstItem="pb5-bn-p4V" firstAttribute="leading" secondItem="Pix-Je-M7N" secondAttribute="leading" id="aM1-vK-sXL"/>
+                            <constraint firstItem="Pix-Je-M7N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pUZ-n7-LFl"/>
+                            <constraint firstItem="pb5-bn-p4V" firstAttribute="trailing" secondItem="Pix-Je-M7N" secondAttribute="trailing" id="wxr-da-6Wt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="Pix-Je-M7N" id="20b-xc-GqL"/>
+                        <outlet property="shareButton" destination="pb5-bn-p4V" id="Gtk-YZ-Kd8"/>
+                        <outlet property="userImage" destination="3l5-nE-63J" id="gIq-Gj-98E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
